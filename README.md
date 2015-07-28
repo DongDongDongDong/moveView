@@ -52,4 +52,7 @@
         // selectedDefects为所有添加在图片上标签的属性，包括标签方向，标签位置，标签一级标题，标签二级标题等属性
         
     }];
+    // 控制添加标签最大数量
+        imageController.Label_Max_Count = 3;
+
     [self.navigationController pushViewController:imageController animated:YES];
