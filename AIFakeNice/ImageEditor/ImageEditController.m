@@ -212,12 +212,17 @@
 
 //  点击增加瑕疵
 - (IBAction)addDefect:(id)sender {
-    
     [self.cover removeFromSuperview];
     [AINoteCenter postNotificationName:AITimerNotefication object:self userInfo:nil];
+    NSInteger max_count;
     
-    if(self.imagebutton.subviews.count >= 5){
-        [GetDBUniqueID showTips:@"最多添加4个瑕疵点！" forSecond:1.0f onView:self.view];
+    if (self.Label_Max_Count == 0) {
+        max_count = 4;
+    }else{
+        max_count = self.Label_Max_Count;
+    }
+    if(self.imagebutton.subviews.count >= max_count + 1){
+        [GetDBUniqueID showTips:@"添加瑕疵超过最大数量！" forSecond:1.0f onView:self.view];
         return;
     }
     firstTableView *first = [[firstTableView alloc]init];
@@ -227,6 +232,9 @@
     PPNavigationViewController *nav = [[PPNavigationViewController alloc]initWithRootViewController:first];
     [self presentViewController:nav animated:YES completion:nil];
 }
+//
+
+
 
 // 点击删除瑕疵
 - (IBAction)deleteDefect:(id)sender {

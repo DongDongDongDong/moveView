@@ -8,14 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface ImageEditController : UIViewController
+
+
 
 /**
  *   显示的瑕疵点
  */
 @property (nonatomic,strong)NSArray *titleArray;
 
+/**
+ *   最多添加瑕疵数量
+ */
+@property (nonatomic,assign)NSInteger Label_Max_Count;
 
 - (instancetype)initWithImage:(NSData *)imageData defects:(NSArray *)defects callback:(void(^)(UIImage *image, NSArray *selectedDefects,UIImage *originImage))callback;
+
 @end
 

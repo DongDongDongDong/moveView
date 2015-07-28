@@ -64,6 +64,7 @@
         //                    [self.navigationController popViewControllerAnimated:NO];
         [self dismissViewControllerAnimated:NO completion:nil];
     }];
+    imageController.Label_Max_Count = 3;
     [self.navigationController pushViewController:imageController animated:YES];
 
 }
